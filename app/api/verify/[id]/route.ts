@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server';import {supabase} from '@/lib/supabase';
+export async function GET(_request:Request,{params}:{params:Promise<{id:string}>}){try{const {id}=await params;const {data,error}=await supabase().rpc('verify_certificate',{lookup_id:id});if(error)throw error;if(!data?.length)return NextResponse.json({valid:false});return NextResponse.json({valid:true,data:data[0]});}catch(e){return NextResponse.json({error:e instanceof Error?e.message:'Verification unavailable.'},{status:503});}}

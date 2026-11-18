@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server';import {supabase,supabaseConfigured} from '@/lib/supabase';
+export async function GET(){if(!supabaseConfigured())return NextResponse.json({data:[],configured:false});try{const {data,error}=await supabase().from('services').select('id,slug,name,description').eq('is_published',true).order('sort_order');if(error)throw error;return NextResponse.json({data});}catch(e){return NextResponse.json({error:e instanceof Error?e.message:'Unable to load services.'},{status:503});}}

@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="loading-screen" aria-live="polite" aria-label="Loading page"><div className="loading-mark"><img src="/brand/rilora-messaging.jpeg" alt="" width="72" height="72"/></div><p>Preparing your RILORA experience</p><div className="loading-track"><span/></div></main>}

@@ -1,0 +1,2 @@
+import { SupportEnquiryForm } from '@/components';
+export default function Contact(){return <main><section className="hero"><div className="container"><div className="eyebrow">RILORA Support</div><h1>How can we help?</h1><p>Send a project, service, partnership, careers, or general enquiry to the RILORA team.</p><p><a className="email-highlight" href="mailto:rilora.official@gmail.com">rilora.official@gmail.com</a></p></div></section><section className="section"><div className="container"><SupportEnquiryForm/></div></section></main>}
